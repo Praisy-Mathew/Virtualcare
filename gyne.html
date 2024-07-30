@@ -45,11 +45,12 @@
   z-index: 1050;
 }
 .modal-content {
-            border-radius: 15px; /* Rounded corners for modal */
+            border-radius: 50px; /* Rounded corners for modal */
         }
         .modal-header {
             background-color: skyblue; /* Background color for header */
             border-bottom: none;
+            border-radius: 40px;
         }
         .form-control {
             border: 2px solid #007bff; /* Border color for input fields */
@@ -61,11 +62,11 @@
             box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Focus shadow */
         }
         .btn-primary {
-            border-radius: 5px; /* Rounded corners for buttons */
+            border-radius: 30px; /* Rounded corners for buttons */
             padding: 0.75rem 1.5rem; /* Increase button padding */
         }
         .btn-danger {
-            border-radius: 10px; /* Rounded corners for cancel button */
+            border-radius: 30px; /* Rounded corners for cancel button */
             padding: 0.75rem 1.5rem; /* Increase button padding */
         }
         .btn-group {
@@ -112,6 +113,30 @@
     }
     .modal-body form .form-group {
       margin-bottom: 15px;
+    }
+    .navbar-nav {
+      margin-left: auto;
+    }
+    .mobile-nav-toggle {
+      cursor: pointer;
+    }
+    .navbar-mobile {
+      position: fixed;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(60, 60, 60, 0.9);
+      transition: 0.3s;
+      z-index: 999;
+    }
+    .navbar-mobile .navbar-nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    .navbar-mobile .nav-item {
+      margin: 10px 0;
     }
 
     </style>
@@ -207,8 +232,8 @@
         </div>
       </div>
   
-      <h5 style="text-align: center;"><strong><em>To book an emergency virtual appointment or for immediate assistance, please call
-        1234567890 or click the button below.</em></strong></h5>
+      <p style="text-align: center;"><strong><em>To book an emergency virtual appointment or for immediate assistance, please call
+        1234567890 or click the button below.</em></strong></p>
         <div class="container d-flex justify-content-center" style="align-items: center;">
             <a href="" class="appointment-btn scrollto" data-toggle="modal" data-target="#appointmentModal"><span class="d-none d-md-inline">Make an</span>
               Appointment</a>

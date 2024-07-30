@@ -32,23 +32,16 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- =======================================================
-  * Template Name: Medicio
-  * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+ 
   <style>
+
   .modal-content {
-    border-radius: 15px; /* Rounded corners for modal */
+    border-radius: 50px; /* Rounded corners for modal */
 }
 .modal-header {
     background-color: skyblue; /* Background color for header */
     border-bottom: none;
+    border-radius: 40px;
 }
 .form-control {
     border: 2px solid #007bff; /* Border color for input fields */
@@ -60,11 +53,11 @@
     box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Focus shadow */
 }
 .btn-primary {
-    border-radius: 5px; /* Rounded corners for buttons */
+    border-radius: 30px; /* Rounded corners for buttons */
     padding: 0.75rem 1.5rem; /* Increase button padding */
 }
 .btn-danger {
-    border-radius: 10px; /* Rounded corners for cancel button */
+    border-radius: 30px; /* Rounded corners for cancel button */
     padding: 0.75rem 1.5rem; /* Increase button padding */
 }
 .btn-group {
@@ -112,6 +105,30 @@ color: #ffcc00;
 .modal-body form .form-group {
 margin-bottom: 15px;
 }
+.navbar-nav {
+      margin-left: auto;
+    }
+    .mobile-nav-toggle {
+      cursor: pointer;
+    }
+    .navbar-mobile {
+      position: fixed;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba(60, 60, 60, 0.9);
+      transition: 0.3s;
+      z-index: 999;
+    }
+    .navbar-mobile .navbar-nav {
+      flex-direction: column;
+      align-items: center;
+    }
+    .navbar-mobile .nav-item {
+      margin: 10px 0;
+}
 
 </style>
 
@@ -130,77 +147,89 @@ margin-bottom: 15px;
       </div>
     </div>
   </div>
+      <!-- ======= Header ======= -->
+      <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+    
+          <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+    
+          <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul class="">
+              <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+              <li><a class="nav-link scrollto" href="#about">About</a></li>
+              <li><a class="nav-link scrollto" href="#services">Services</a></li>
+              <li><a class="nav-link scrollto" href="#featured-services">Departments</a></li>
+              <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
-      <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#featured-services">Departments</a></li>
-          <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
+       
       <a href="" class="appointment-btn scrollto" data-toggle="modal" data-target="#appointmentModal"><span class="d-none d-md-inline">Make an</span>
         Appointment</a>
-                    <!-- The Modal -->
-                    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="appointmentModalLabel">Book a Virtual Appointment</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <p>Please select your preferred department and fill in the required details to book a virtual appointment.</p>
-                            <form>
-                              <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                              </div>
-                              <div class="mb-3">
-                                <label for="contact" class="form-label">Contact Information</label>
-                                <input type="text" class="form-control" id="contact" placeholder="Enter your contact information" required>
-                              </div>
-                              <div class="mb-3">
-                                <label for="department" class="form-label">Department Selection</label>
-                                <select class="form-control" id="department" required>
-                                  <option value="">Select Department</option>
-                                  <option value="cardiology">Cardiology</option>
-                                  <option value="neurology">Neurology</option>
-                                  <option value="orthopedics">Orthopedics</option>
-                                  <option value="emergency" selected>Emergency</option>
-                                </select>
-                              </div>
-                              <div class="mb-3">
-                                <label for="datetime" class="form-label">Preferred Date and Time</label>
-                                <input type="datetime-local" class="form-control" id="datetime" required>
-                              </div>
-                              <div class="mb-3">
-                                <label for="notes" class="form-label">Any Specific Concerns or Notes</label>
-                                <textarea class="form-control" id="notes" rows="3" placeholder="Enter your concerns or notes"></textarea>
-                              </div>
-                              <button type="submit" class="btn btn-primary w-100">Book Now</button>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  
+      </header>
+      <!-- The Modal -->
+      <div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: skyblue; text-align: center;">
+              <h5 class="modal-title" id="appointmentModalLabel">Book a Virtual Appointment</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
                 </div>
-       
+                <div class="form-group">
+                  <label for="contact">Contact Information</label>
+                  <input type="text" class="form-control" id="contact" placeholder="Enter your contact information" required>
+                </div>
+                <div class="form-group">
+                  <label for="department">Department Selection</label>
+                  <select class="form-control" id="department" required>
+                    <option value="">Select Department</option>
+                    <option value="emergency">Emergency</option>
+                    <option value="paediatric">Paediatric</option>
+                    <option value="orthopaedic">Orthopaedics</option>
+                    <option value="gynaecology">Gynaecology</option> 
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="datetime">Preferred Date and Time</label>
+                  <input type="datetime-local" class="form-control" id="datetime" required>
+                </div>
+                <div class="form-group">
+                  <label for="notes">Any Specific Concerns or Notes</label>
+                  <textarea class="form-control" id="notes" rows="3" placeholder="Enter your concerns or notes"></textarea>
+                </div>
+                <div>
+                <button type="submit" class="btn btn-primary" style="text-align:right">Book now</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    </html>
+</div>
+</div>
 
-    </div>
-  </header><!-- End Header -->
+</main>
+</div>
+
+
+</div>
+                    
+</div>
+<!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -320,7 +349,7 @@ margin-bottom: 15px;
         <div class="text-center">
           <h3>In an emergency? Need help now?</h3>
           <p>Our team of
-            experienced professionals is ready to handle all types of emergencies.</p>
+            experienced professionals is ready to handle all types of emergencies</p>
           
             
           
@@ -683,7 +712,7 @@ medications at home.
               <li><i class="bx bx-chevron-right"></i> <a href="#home">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">About </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#department">Departments</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Departments</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact</a></li>
 
             </ul>
@@ -744,12 +773,14 @@ medications at home.
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  
+
   <!-- Inline JavaScript for initializing the modal -->
   <script>
     $(document).ready(function() {
       $('#appointmentModal').on('show.bs.modal', function (event) {
         var modal = $(this);
-        modal.find('.modal-body #department').val('emergency'); // Set the department to Emergency
+        modal.find('.modal-body #department').val(''); // Set the department to Emergency
       });
     });
   </script>
