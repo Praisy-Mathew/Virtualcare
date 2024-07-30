@@ -38,9 +38,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-    .modal-body form .form-group {
-      margin-bottom: 15px;
-    }.modal-content {
+      .modal-content {
             border-radius: 15px; /* Rounded corners for modal */
         }
         .modal-header {
@@ -69,7 +67,7 @@
             justify-content: flex-end; /* Align buttons to the right */
             gap: 10px; /* Space between buttons */
         }
-    .modal-header {
+        .modal-header {
       background-color: #00aaff;
       color: white;
       border-top-left-radius: 0.3rem;
@@ -110,8 +108,12 @@
       margin-bottom: 15px;
     }
 
-
-
+    .modal-body form .form-group {
+      margin-bottom: 15px;
+    }
+    .modal {
+  z-index: 1050;
+}
     </style>
 
 </head>
@@ -137,80 +139,75 @@
       <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html">About</a></li>
-          <li><a class="nav-link scrollto" href="index.html">Services</a></li>
-          <li><a class="nav-link scrollto" href="index.html">Departments</a></li>
-          <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
-        </ul>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+              <ul>
+                <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+                <li><a class="nav-link scrollto" href="index.html">About</a></li>
+                <li><a class="nav-link scrollto" href="index.html">Services</a></li>
+                <li><a class="nav-link scrollto" href="index.html">Departments</a></li>
+                <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
+              </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
-  </header>
-      
-      <!-- End Header -->
+  </header><!-- End Header -->
   <section id="gallery" class="gallery">
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
         <div class="col-lg-12">
-        <h2 style="margin-top:100px; color: skyblue;">Orthopaedic Care</h2>
-        <p><em><strong>Our Orthopaedic Department specializes in
-          the diagnosis and treatment of musculoskeletal conditions through virtual
-          consultations. Whether dealing with a sports injury, arthritis, or chronic pain, our
-          experts are here to help.</strong></em></p>
+        <h2 style="margin-top:100px; color: skyblue;">Emergency Care </h2>
+        <p><em><strong>Our Emergency Department offers
+            immediate virtual care for critical health issues, available 24/7. Our team of
+            experienced professionals is ready to handle all types of emergencies.</strong></em></p>
         </div>
       </div>
       <div class="gallery-slider swiper">
         <div class="swiper-wrapper align-items-center">
-          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/ort1..jpg"><img src="assets/img/ort1..jpg" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/ort2.jpg"><img src="assets/img/ort2.jpg" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/ort3..jpg"><img src="assets/img/ort3..jpg" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/ort4.jp.jpg"><img src="assets/img/ort4.jp.jpg" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/ort5.jpg"><img src="assets/img/ort5.jpg" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/ort6..jpg"><img src="assets/img/ort6..jpg" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/ort7.jpg"><img src="assets/img/ort7.jpg" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/ort8.jpg"><img src="assets/img/ort8.jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/eme1.jpg"><img src="assets/img/eme1.jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/eme2.jpg"><img src="assets/img/eme2.jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/eme3..jpg"><img src="assets/img/eme3..jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/eme4.jpg"><img src="assets/img/eme4.jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/eme5.jpg"><img src="assets/img/eme5.jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/eme6..jpg"><img src="assets/img/eme6..jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/eme7.jpg"><img src="assets/img/eme7.jpg" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="gallery-lightbox" href="assets/img/eme8.jpg"><img src="assets/img/eme8.jpg" class="img-fluid" alt=""></a></div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="" style="border-color:skyblue; border-radius:10%; border-width:4px;">
-            <div class="card-body text-center" style="margin-top:5px;">
-              <i class="bi bi-bandaid" style="font-size: 3rem; color:skyblue;"></i>
-              <h5 class="card-title" style="color:skyblue">Joint replacement</h5>
-              <p class="card-text"><strong><em>Surgical procedure to replace damaged joints with artificial implants for improved mobility.</em></strong></p>
+            <div class="card-body text-center" style="margin-top: 15px;">
+              <i class="fa fa-ambulance" style="font-size: 3rem; color:skyblue;"></i>
+              <h5 class="card-title" style="color:skyblue">Trauma care</h5>
+              <p class="card-text"><strong><em>Comprehensive treatment for injuries caused by accidents or physical impact.</em></strong></p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="" style="border-color:skyblue; border-radius:10%; border-width:4px;">
-            <div class="card-body text-center" style="margin-top:30px;">
-              <i class="fa fa-user-injured" style="font-size: 3rem; color: skyblue;"></i>
-              <h5 class="card-title" style="color: skyblue;">sports injuries</h5>
-              <p class="card-text"><strong><em>Expert treatment for sports-related injuries.</em></strong></p>
+            <div class="card-body text-center" style="margin-top: 15px;">
+              <i class="fas fa-heartbeat" style="font-size: 3rem; color: skyblue;"></i>
+              <h5 class="card-title" style="color: skyblue;">cardiac emergencies</h5>
+              <p class="card-text"><strong><em>Immediate care for severe heart-related conditions like heart attacks.</em></strong></p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="" style="border-color:skyblue; border-radius:10%; border-width:4px;">
-            <div class="card-body text-center">
-              <i class="bi bi-activity" style="font-size: 3rem; color: skyblue;"></i>
-              <h5 class="card-title" style="color: skyblue;">fracture treatment</h5>
-              <p class="card-text"><strong><em>Comprehensive care for fractures and broken bones.</em></strong></p>
+            <div class="card-body text-center" style="margin-top: 15px;">
+              <i class="fas fa-stethoscope" style="font-size: 3rem; color: skyblue;"></i>
+              <h5 class="card-title" style="color: skyblue;">stroke treatment</h5>
+              <p class="card-text"><strong><em>Rapid intervention for individuals experiencing a stroke to minimize brain damage.</em></strong></p>
             </div>
           </div>
         </div>
       </div>
   
-      <h5 style="text-align: center;"><strong><em>To
-        book a virtual appointment, please call 1234567890 or use our online booking
-        system</em></strong></h5>
+      <h5 style="text-align: center;"><strong><em>To book an emergency virtual appointment or for immediate assistance, please call
+        1234567890 or click the button below.</em></strong></h5>
         <div class="container d-flex justify-content-center" style="align-items: center;">
             <a href="" class="appointment-btn scrollto" data-toggle="modal" data-target="#appointmentModal"><span class="d-none d-md-inline">Make an</span>
               Appointment</a>
@@ -237,10 +234,10 @@
                               <label for="department">Department Selection</label>
                               <select class="form-control" id="department" required>
                                 <option value="">Select Department</option>
-                                <option value="cardiology">Emergency</option>
-                                <option value="neurology">Paediatric</option>
+                                <option value="cardiology">Paediatric</option>
+                                <option value="neurology">Orthopaedic</option>
                                 <option value="orthopedics">Gynaecology</option>
-                                <option value="emergency" selected>Orthopaedic</option> <!-- Predefined Emergency Department -->
+                                <option value="emergency" selected>Emergency</option> <!-- Predefined Emergency Department -->
                               </select>
                             </div>
                             <div class="form-group">

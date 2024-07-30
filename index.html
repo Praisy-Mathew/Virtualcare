@@ -28,7 +28,13 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- =======================================================
   * Template Name: Medicio
   * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
@@ -36,6 +42,79 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+  .modal-content {
+    border-radius: 15px; /* Rounded corners for modal */
+}
+.modal-header {
+    background-color: skyblue; /* Background color for header */
+    border-bottom: none;
+}
+.form-control {
+    border: 2px solid #007bff; /* Border color for input fields */
+    border-radius: 10px; /* Rounded corners for input fields */
+    padding: 0.5 rem; /* Increase padding inside input fields */
+}
+.form-control:focus {
+    border-color: #0056b3; /* Darker border color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Focus shadow */
+}
+.btn-primary {
+    border-radius: 5px; /* Rounded corners for buttons */
+    padding: 0.75rem 1.5rem; /* Increase button padding */
+}
+.btn-danger {
+    border-radius: 10px; /* Rounded corners for cancel button */
+    padding: 0.75rem 1.5rem; /* Increase button padding */
+}
+.btn-group {
+    display: flex; /* Align buttons in a row */
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Space between buttons */
+}
+.modal-header {
+background-color: #00aaff;
+color: white;
+border-top-left-radius: 0.3rem;
+border-top-right-radius: 0.3rem;
+align-items: center;
+}
+.modal-content {
+border-radius: 1 rem;
+}
+.modal-body {
+padding: 2rem;
+}
+.form-control {
+border-radius: 0.25rem;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.form-control:focus {
+border-color: #00aaff;
+box-shadow: 0 0 10px rgba(0, 170, 255, 0.2);
+}
+.btn-primary {
+background-color: #00aaff;
+border-color: #00aaff;
+transition: background-color 0.3s, border-color 0.3s;
+}
+.btn-primary:hover {
+background-color: #0088cc;
+border-color: #0088cc;
+}
+.modal-header .close {
+color: white;
+opacity: 1;
+}
+.modal-header .close:hover {
+color: #ffcc00;
+}
+.modal-body form .form-group {
+margin-bottom: 15px;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -65,20 +144,67 @@
           <li><a class="nav-link scrollto " href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#featured-services">Departments</a></li>
+          <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
-      <a href="app.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+      <a href="" class="appointment-btn scrollto" data-toggle="modal" data-target="#appointmentModal"><span class="d-none d-md-inline">Make an</span>
+        Appointment</a>
+                    <!-- The Modal -->
+                    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="appointmentModalLabel">Book a Virtual Appointment</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>Please select your preferred department and fill in the required details to book a virtual appointment.</p>
+                            <form>
+                              <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                              </div>
+                              <div class="mb-3">
+                                <label for="contact" class="form-label">Contact Information</label>
+                                <input type="text" class="form-control" id="contact" placeholder="Enter your contact information" required>
+                              </div>
+                              <div class="mb-3">
+                                <label for="department" class="form-label">Department Selection</label>
+                                <select class="form-control" id="department" required>
+                                  <option value="">Select Department</option>
+                                  <option value="cardiology">Cardiology</option>
+                                  <option value="neurology">Neurology</option>
+                                  <option value="orthopedics">Orthopedics</option>
+                                  <option value="emergency" selected>Emergency</option>
+                                </select>
+                              </div>
+                              <div class="mb-3">
+                                <label for="datetime" class="form-label">Preferred Date and Time</label>
+                                <input type="datetime-local" class="form-control" id="datetime" required>
+                              </div>
+                              <div class="mb-3">
+                                <label for="notes" class="form-label">Any Specific Concerns or Notes</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="Enter your concerns or notes"></textarea>
+                              </div>
+                              <button type="submit" class="btn btn-primary w-100">Book Now</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                </div>
+       
 
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="heroCarousel" data-bs-interval="500" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
       <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
@@ -140,33 +266,45 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="fas fa-heartbeat"></i></div>
-              <h4 class="title"><a href="emer.html"> Emergency </a></h4>
+              <a href="em.html" style="color: black;">
+              <h4 class="title"> Emergency</h4>
               <p class="description">Immediate care for urgent medical conditions, available 24/7.</p>
+              <a href="em.html" class="btn-get-started scrollto">Read More</a>
+              </a>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="bi bi-emoji-smile"></i></div>
-              <h4 class="title"><a href="paed.html">Paediatric</a></h4>
+              <a href="pa.html" style="color: black;">
+              <h4 class="title">Paediatric</h4>
               <p class="description">Comprehensive virtual care for infants, children, and adolescents.</p>
+              <a href="pa.html" class="btn-get-started scrollto">Read More</a>
+            </a>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
               <div class="icon"><i class="bi bi-person-check"></i></div>
-              <h4 class="title"><a href="ortho.html">Orthopaedics</a></h4>
+              <a href="or.html" style="color: black;">
+              <h4 class="title">Orthopaedics</h4>
               <p class="description">Expert virtual consultations for musculoskeletal conditions.</p>
+              <a href="or.html" class="btn-get-started scrollto">Read More</a>
+              </a>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
               <div class="icon"><i class="bi bi-gender-female"></i></div>
-              <h4 class="title"><a href="gyn.html">Gynaecology</a></h4>
+              <a href="gyne.html" style="color: black;">
+              <h4 class="title">Gynaecology</h4>
               <p class="description">Comprehensive women's health services, including prenatal
                 and reproductive care.</p>
+                <a href="gyne.html" class="btn-get-started scrollto">Read More</a>
+                </a>
             </div>
           </div>
 
@@ -183,7 +321,9 @@
           <h3>In an emergency? Need help now?</h3>
           <p>Our team of
             experienced professionals is ready to handle all types of emergencies.</p>
-          <a class="cta-btn scrollto" href="app.html">Make an Appointment</a>
+          
+            
+          
         </div>
 
       </div>
@@ -196,8 +336,7 @@
         <div class="row gy-4 gx-5">
 
           <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/doctors/doctors-1.jpg" width="250" height="250" class="img-fluid" alt="">
-            <img src="assets/img/gallery/gallery-6.jpg" width="250" height="250" class="img-fluid" alt="">
+            <img src="assets/img/vc.jpg" width="85%"  class="img-fluid" alt="">
             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox pulsating-play-btn"></a>
           </div>
 
@@ -218,7 +357,7 @@ the comfort of your home.
 
     </section>
 
-    <!-- End About Us Section --!
+    <!-- End About Us Section --!>
    
 
     <!-- ======= Services Section ======= -->
@@ -264,90 +403,10 @@ the comfort of your home.
       </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Appointment Section ======= -->
-    <!-- End Appointment Section -->
+    
 
-    <!-- ======= Departments Section ======= -->
-    <section id="departments" class="departments">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Departments</h2>
-          <p>Our Departments</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <ul class="nav nav-tabs flex-column">
-              <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-                  <h4>Emergency Department </h4>
-                  <p>Immediate care for urgent medical conditions, available 24/7.</p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-                  <h4>Paediatric Department</h4>
-                  <p>Comprehensive virtual care for infants, children, and adolescents.</p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                  <h4>Orthopaedics Department</h4>
-                  <p>Expert virtual consultations for musculoskeletal conditions.</p>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-                  <h4>Gynaecology Department</h4>
-                  <p>Comprehensive women's health services, including prenatal
-                    and reproductive care.</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-8">
-            <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
-                <h3>Emergency Department</h3>
-                <img src="assets/img/department-emer.jpeg" alt="" class="img-fluid">
-                <p class="fst-italic">Our Emergency Department offers
-                  immediate virtual care for critical health issues, available 24/7. Our team of
-                  experienced professionals is ready to handle all types of emergencies.</p>
-                <p>Services: Trauma care, cardiac emergencies, stroke treatment, etc</p>
-              </div>
-              <div class="tab-pane" id="tab-2">
-                <h3>Paediatric Department</h3>
-                <img src="assets/img/department - pedia.jpg" alt="" class="img-fluid">
-                <p class="fst-italic">Our Paediatric Department provides
-                  comprehensive virtual care for infants, children, and adolescents. From routine checkups to specialized treatments, we are dedicated to the health and well-being of your
-                  child.</p>
-                  <p>Services: Vaccinations, routine check-ups, specialized paediatric treatments</p>
-              </div>
-              <div class="tab-pane" id="tab-3">
-                <h3>Orthopaedics Department</h3>
-                <img src="assets/img/ortho.png" alt="" class="img-fluid">
-                <p class="fst-italic">Our Orthopaedic Department specializes in
-                  the diagnosis and treatment of musculoskeletal conditions through virtual
-                  consultations. Whether dealing with a sports injury, arthritis, or chronic pain, our
-                  experts are here to help.</p>
-                <p>Services: Joint replacement, sports injuries, fracture treatment</p>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <h3>Gynaecology Department</h3>
-                <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
-                <p class="fst-italic">Our Gynaecology Department offers
-                  a full range of virtual women’s health services, including prenatal care, reproductive
-                  health, and menopause management. Our team is committed to providing
-                  personalized and compassionate care.</p>
-                <p>Services: Prenatal care, reproductive health, menopause management</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Departments Section -->
+    
+      
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -371,7 +430,7 @@ with my doctor from home has made managing my chronic condition so
 much easier.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <img src="data:image/png;base64,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" class="testimonial-img" alt="">
                 <h3>John D.</h3>
               </div>
             </div><!-- End testimonial item -->
@@ -385,7 +444,7 @@ much easier.
                   clinic.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <img src="data:image/png;base64,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" class="testimonial-img" alt="">
                 <h3>Emily R.</h3>
   
               </div>
@@ -400,7 +459,7 @@ doctor was knowledgeable and provided excellent advice on managing my
 injury.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <img src="data:image/png;base64,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" class="testimonial-img" alt="">
                 <h3>Michael T</h3>
               </div>
             </div><!-- End testimonial item -->
@@ -591,84 +650,6 @@ medications at home.
       </div>
     </section><!-- End Frequently Asked Questioins Section -->
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2> Contact Us </h2>
-          <p>"We are here to assist you with any inquiries or
-            concerns. Please reach out to us through any of the following methods.</p>
-        </div>
-
-      </div>
-
-      <div>
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <div class="container">
-
-        <div class="row mt-5">
-
-          <div class="col-lg-6">
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="info-box">
-                  <i class="bx bx-map"></i>
-                  <h3>Our Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box mt-4">
-                  <i class="bx bx-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>info@virtualcareinfo.com<br>contact@Virtualcare.com</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box mt-4">
-                  <i class="bx bx-phone-call"></i>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="7" placeholder="Message" required=""></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -703,7 +684,7 @@ medications at home.
               <li><i class="bx bx-chevron-right"></i> <a href="#about">About </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#department">Departments</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact</a></li>
 
             </ul>
           </div>
@@ -759,12 +740,19 @@ medications at home.
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Inline JavaScript for initializing the modal -->
   <script>
-    function goToAppointmentPage() {
-        const department = document.getElementById('departmentSelect').value;
-        window.location.href = `appointment.html?department=${department}`;
-    }
-</script>
+    $(document).ready(function() {
+      $('#appointmentModal').on('show.bs.modal', function (event) {
+        var modal = $(this);
+        modal.find('.modal-body #department').val('emergency'); // Set the department to Emergency
+      });
+    });
+  </script>
 </body>
 
 </html>
